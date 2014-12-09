@@ -1,0 +1,517 @@
+@charset "utf-8";
+/* CSS Document */
+
+/* Color palette for site   */
+/*  Dark Red        #7f0000 */
+/*  Active Link Red #990000 */
+/*  Burnt Orange:   #c95516 */
+/*  Warm Teal:      #3eb49f */
+/*  Pea Green:      #c2c76e */
+/*  Warm Gray       #948e8e */ 
+/*  Dark Choc       #582f2f */
+/*  Medium Choc     #684343 */
+/*  Lighter Choc    #795858 */
+/*  Lightest Choc   #896d6d */
+/*  Camo Green      #6d8455 */
+/*  Dark Brown      #3b231c */
+/*  Warm Orange     #c74205 */
+/*  DarkWarm Orange #b43318 */
+/*  Dark Scarlet    #aa1503 */
+/*  Warm Scarlet    #d83000 */
+/*  Dark Pea Green  #a5a724 */ 
+/*  Very Dark Mauve #886060 */
+/*  Darkest Mauve   #845757 */
+/*  Dark Mauve      #976464 */
+/*  Muted Mauve     #bd7d7d */
+/*  Medium Mauve    #c38a8a */
+/*  Light Mauve     #ca9797 */
+/*  Lightest Mauve  #d0a4a4 */
+/*  Milk Chocolate  #ca8568 */
+/*  Dark Milk Choc  #ba6348 */
+/*  Tan-Flesh       #e3b58a */
+/*  Warm Cream      #f1e8ca */
+/*  Smoky Blue      #bbcbdb */
+/*  Sage Green      #9ebd9e */
+/*  Antique Tan     #c4ac7c */
+/*  Sepia-like      #f0dda4 */
+/*  Dark Periwinkle #636397 */
+
+/* Remove all default margins and padding */
+* {
+    margin: 0px;
+    padding: 0px;
+}
+
+/* Sepia Filter Effect */
+.sepia-light {
+    /* The following filters can be commented out */
+    /* in order to remove errors messages in      */
+    /* W3C CSS3 validation. They cause those error*/
+    /* messages, but the sepia effect works fine. */
+    /*filter: sepia(30%);
+    -moz-filter: sepia(30%);
+    -o-filter: sepia(30%);
+    -ms-filter: sepia(30%)
+    -webkit-filter: sepia(30%);*/
+}
+.sepia {
+     /* The following filters can be commented out */
+    /* in order to remove errors messages in      */
+    /* W3C CSS3 validation. They cause those error*/
+    /* messages, but the sepia effect works fine. */
+    /*filter: sepia(60%);
+    -moz-filter: sepia(60%);
+    -o-filter: sepia(60%);
+    -ms-filter: sepia(60%)
+    -webkit-filter: sepia(60%);*/
+}
+
+@font-face {
+    font-family: myFirstFont;
+    src: url(../fonts/aflfont.TTF);
+}
+
+body {   
+    background-position: 0;
+    background-image: url(../images/backgrounds/background19_big.jpg);
+    background-repeat: round; 
+    color: #582f2f;
+    font-family: myFirstFont, calibri, verdana, tahoma, arial, helvetica, sans-serif;
+    /* The right-margin setting below is to account for  */
+    /* centering, given the scrollbar on the right side. */
+    margin-right: 19px;
+    text-align: center;
+}
+
+#wrapper {
+    width: 960px;
+    margin: 10px auto;
+    font-family: myFirstFont;
+    font-weight: bold;
+}
+
+#header_wrapper {
+    width: inherit;
+    margin: auto auto auto 8px;
+}
+
+#updates_wrapper {    
+    width: inherit;
+    margin: auto auto 30px 8px;
+}
+
+#content {
+    margin: 0px -8px 10px 0px;
+    float: right;
+    width: 60%;
+    text-align: left;
+    border-spacing: 10px;
+    border-style: solid;
+    border-color: #582f2f;
+    border-width: 6px;  
+    background-color: white;
+    padding: 20px;
+    font-family: myFirstFont;
+    font-size: 1.25em;
+}
+
+#sidebar {
+    width: 35%;
+    margin: 0px 0px 10px 0px;
+    clear: left;
+    float: left;
+    font-family: myFirstFont;
+}
+#footer {
+    margin-top: 20px;
+    margin-right: auto;
+    margin-left: auto;
+    clear: both;
+    width: inherit;
+    font-size: smaller; 
+    font-family: myFirstFont;
+    background-color: white;
+    border-spacing: 10px;
+    border-style: outset;
+    border-color: #582f2f;
+    border-width: 6px;  
+}
+#footer p { 
+    padding: 1em; 
+}
+
+/**********************/
+
+#calendar_wrapper {
+    width: 960px;
+    margin: 10px auto;
+    font-family: myFirstFont;
+    font-weight: bold;
+}
+
+#frame_wrapper {
+    width: inherit;
+    margin: auto auto auto 2px;
+}
+
+/**********************/
+
+#postcards_wrapper {
+    width: 960px;
+    margin: 10px auto;
+    font-family: myFirstFont;
+    font-weight: bold;
+}
+
+#slideshow_wrapper {
+    width: inherit;
+    margin: auto auto auto 2px;
+}
+
+
+/*******************************************************/
+
+.masthead {   
+    display: table;
+    margin-bottom: 8px;
+    background-color: white;
+    border-spacing: 10px;
+    border-style: outset;
+    border-color: #582f2f;
+    border-width: 15px;
+    border-radius: 2px;
+}
+.left {
+    display: table-cell;
+    width: 64%;
+    vertical-align: top;
+    font-family: myFirstFont;
+}
+.right {
+    display: table-cell;
+    width: 20%;
+    vertical-align: middle;
+}
+p#BHCA_logo_1st_line {
+    font-size: 2.1em;
+    padding: 7px 0px;
+}
+p#BHCA_logo_2nd_line {
+    font-size: 1.50em;
+    padding: 7px 0px;
+}
+img#BH_postcard {
+    border: 3px solid #582f2f;
+} 
+
+/******************************************************/
+
+nav {
+    width: inherit;
+    margin-bottom: 20px;
+    align-content: center;
+}
+
+/* Note that position matters with the settings below */
+nav ul {
+    list-style: none;
+    padding: 0;
+}
+
+nav ul li {
+    display: inline-block;
+    padding: 7px 3px 3px;
+    position: relative; /* Need this to position dropdown */
+} 
+
+/* Selector for the dropdown */
+/* Left: 0px below lines up the left side of dropdown with left side of parent */
+nav ul li ul {
+    display: none;
+    left: 0px;
+    right: auto;
+    width: auto;
+    margin-top: 3px;
+    padding-top: 6px;
+    /* For IE, Firefox, and Safari/Chrome     */
+    /* This provides shadowed box as platform */
+    /* for dropdown menu items                */
+    box-shadow: 1px 2px 4px 2px #582f2f;
+    /* The following box-shadows commented out because they  */
+    /* cause W3C CSS3 validation errors, but ok to uncomment */
+    /* and use if needed.                                    */
+    /*-moz-box-shadow: 1px 2px 4px 2px #582f2f;
+    -webkit-box-shadow: 1px 2px 4px 2px #582f2f;*/
+    /* Puts the top on the shadow */
+    border-top: 1px solid #582f2f; 
+}
+
+/* Selects all links in dropdown */
+nav ul li ul li {
+    width: 210px;
+    border: 0;
+}
+
+nav ul li a, ul li ul li a {
+    text-decoration: none;
+    color: #582f2f;
+    display: block; 
+    font-family: myFirstFont;
+    font-weight: bold; 
+    font-size: 1.05em;
+    background-color: white;
+    /* For IE, Firefox, and Safari/Chrome */
+    box-shadow: 1px 2px 4px 2px #582f2f;
+    /* The following box-shadows commented out because they  */
+    /* cause W3C CSS3 validation errors, but ok to uncomment */
+    /* and use if needed.                                    */
+   /* -moz-box-shadow: 1px 2px 4px 2px #582f2f;
+    -webkit-box-shadow: 1px 2px 4px 2px #582f2f;*/
+    padding-left: 0.28em; 
+    padding-right: 0.28em; 
+}
+
+nav ul li a {
+    padding-top: 0.45em; 
+    padding-bottom: 0.45em; 
+}
+
+nav ul li ul li a {
+    padding-top: 0.55em; 
+    padding-bottom: 0.55em;   
+}
+
+/* Need position: absolute below to position dropdown */
+nav ul li:hover > ul {
+    display: block;
+    position: absolute; 
+}
+nav ul li a:hover {
+    display: block; 
+    background-color: #d0a4a4;
+}
+
+.align_right{
+    left: auto;
+    right: 0px;
+}
+
+nav ul li:link {
+    text-decoration: none;
+    color: #582f2f;
+}
+
+nav ul li a:link {
+    text-decoration: none;
+    color: #582f2f;
+}
+
+nav ul li a:active {
+     text-decoration: underline;
+    color: #c95516;
+}
+
+nav ul li#iamhere a,
+nav ul li#iamhere a:link,
+nav ul li#iamhere a:visited,
+nav ul li#iamhere a:hover { 
+    color: #bd7d7d; 
+    font-weight: bold;
+    background-color: #ffffff; 
+    border: thin solid #582f2f;
+}
+
+
+/* I added markup below to keep page from moving right or  */
+/* left when scroll bar was removed or added, respectively */
+html {overflow-y: scroll;}
+
+/*******************************************************/
+
+/* Used in home page to add a little more space under the  */
+/* header (masthead and navigation) than is put there when */
+/* header included on other pages like Calendar of Events  */
+/* and Historical Postcards.                               */
+#spacer {
+    margin: 65px 0px 0px 0px;
+}
+
+/*******************************************************/
+
+#updates_row {     
+    display: table;
+}
+
+#newsletter {
+    display: table-cell;
+    width: 320px;
+    vertical-align: middle;
+    font-family: myFirstFont;
+}
+
+#newsletter a {
+    text-decoration: none;
+    font-size: 18px;
+    /* The following box-radius commented out because they   */
+    /* cause W3C CSS3 validation errors, but ok to uncomment */
+    /* and use if needed.                                    */
+    /*-moz-border-radius: 15px;
+    -webkit-border-radius:15px;   */
+    border-radius: 15px;   
+    background-color: #d0a4a4;
+    color: #582f2f;
+    padding: 10px;
+    margin-left: 12px;
+    border: 3px #582f2f solid;   
+    display: block;
+    text-align: center;
+    float: left;
+    box-shadow: 1px 2px 4px 2px #582f2f;
+    /* The following vendor extensions are commented out  */
+    /* because they cause W3C CSS3 validation errors, but */ 
+    /* it is ok to uncomment and use if needed.           */
+    /*-moz-box-shadow: 1px 2px 4px 2px #582f2f;
+    -webkit-box-shadow: 1px 2px 4px 2px #582f2f;*/
+}
+
+#newsletter a:link {
+    text-decoration: none;
+    color: #582f2f;
+}
+
+/* Uncomment if you want this to look different */
+/* after being visite.                          */
+/*#newsletter a:visited {
+    text-decoration: none;
+    color: #636397;
+}*/
+
+#newsletter a:hover {
+    text-decoration: underline;
+    color: #845757;
+}
+
+#newsletter a:active {
+     text-decoration: underline;
+    color: #845757;
+}
+
+/*****************************/
+
+#social_media_icons {
+    display: table-cell;
+    width: 320px;
+    vertical-align: bottom;
+    font-family: myFirstFont;
+}
+
+ul#icon_list {
+    list-style: none;
+/*    padding: 0;*/
+}
+
+ul#icon_list li {
+    display: inline-block;
+    padding: 7px 3px 3px;
+    position: relative; /* Need this to position dropdown */
+} 
+    
+/******************************/
+
+#weather {
+    display: table-cell;
+    width: 320px;
+    vertical-align: middle;
+    font-family: myFirstFont;
+}
+
+#weather a {
+    text-decoration: none;
+    font-size: 18px;
+    /* The following vendor extensions are commented out  */
+    /* because they cause W3C CSS3 validation errors, but */ 
+    /* it is ok to uncomment and use if needed.           */
+   /* -moz-border-radius: 15px;
+    -webkit-border-radius:15px;   */
+    border-radius: 15px;   
+    background-color: #d0a4a4;
+    color: #582f2f;
+    padding: 10px;
+    margin-right: 12px;
+    border: 3px #582f2f solid;   
+    display: block;
+    text-align: center;
+    clear: right;
+    float: right;
+    box-shadow: 1px 2px 4px 2px #582f2f;
+    /* The following vendor extensions are commented out  */
+    /* because they cause W3C CSS3 validation errors, but */ 
+    /* it is ok to uncomment and use if needed.           */
+    /*-moz-box-shadow: 1px 2px 4px 2px #582f2f;
+    -webkit-box-shadow: 1px 2px 4px 2px #582f2f;*/
+}
+
+#weather a:link {
+    text-decoration: none;
+    color: #582f2f;
+}
+
+/* Uncomment if you want this to look different */
+/* after being visite.                          */
+/*#newsletter a:visited {
+    text-decoration: none;
+    color: #636397;
+}*/
+
+#weather a:hover {
+    text-decoration: underline;
+    color: #845757;
+}
+
+#weather a:active {
+     text-decoration: underline;
+    color: #845757;
+}
+
+/*******************************************************/
+
+iframe#framed_info {
+    border: solid 6px #582f2f;
+    /* Uncomment once this passes validation in W3C CSS3 */
+    /* sandbox makes it safer to run code in iframes     */
+/*    sandbox: "allow-scripts allow-popups allow-forms";*/
+}
+
+/*******************************************************/
+
+h2#content_header {
+    text-align: center;
+}
+
+ul {
+    list-style-type: inside;
+    padding:10px;
+    margin: 10px;
+}
+
+/*******************************************************/
+
+iframe#calendar_frame {
+    border: solid 6px #582f2f;
+     /* Uncomment once this passes validation in W3C CSS3 */
+     /* sandbox makes it safer to run code in iframes     */
+/*    sandbox: "allow-scripts allow-popups allow-forms";*/
+    margin-top: 10px;
+    
+}
+
+/*******************************************************/
+
+iframe#slideshow_frame {
+    border: solid 6px #582f2f;
+    /* Uncomment once this passes validation in W3C CSS3 */
+     /* sandbox makes it safer to run code in iframes     */
+/*    sandbox: "allow-scripts allow-popups allow-forms";*/
+    margin-top: 10px;
+    
+}
