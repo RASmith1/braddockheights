@@ -1,25 +1,50 @@
-## Laravel PHP Framework
+# ***CSCI E-15 Dynamic Web Applications***
+# ***Project P4/Course Project: Braddock Heights Community Association website ***
+ 
+# **Live URL**
+*http://braddockheights.dynamicweb.me*
 
-[![Build Status](https://travis-ci.org/laravel/framework.svg)](https://travis-ci.org/laravel/framework)
-[![Total Downloads](https://poser.pugx.org/laravel/framework/downloads.svg)](https://packagist.org/packages/laravel/framework)
-[![Latest Stable Version](https://poser.pugx.org/laravel/framework/v/stable.svg)](https://packagist.org/packages/laravel/framework)
-[![Latest Unstable Version](https://poser.pugx.org/laravel/framework/v/unstable.svg)](https://packagist.org/packages/laravel/framework)
-[![License](https://poser.pugx.org/laravel/framework/license.svg)](https://packagist.org/packages/laravel/framework)
+# **Description sentences**
+P3/Developer's BFF: This Laravel Basics project introduces the student developer to and immerses them 
+in learning the industry-standard skills needed to develop a Laravel-based website.  These skills include 
+planning the website pages and corresponding routes, installing Composer, incorporating dependencies 
+obtained from packagist.org and/or github, committing modifications to github.com, setting up facades, 
+adjusting environment settings, coding the routes, creating views and templates, using Blade syntax, 
+passing data to views, testing the URLs, and deploying the new website to the server.
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable, creative experience to be truly fulfilling. Laravel attempts to take the pain out of development by easing common tasks used in the majority of web projects, such as authentication, routing, sessions, and caching.
+# **Demo information** 
+My demo is a Jing capture at http://screencast.com/t/kbVPiToljvyJ .  I did have to create this three
+times, and when I go to the link that it put on my clipboard, it brings me to Jing, but I don't see the screen cast, 
+which I thought I would.  If you can't see it, please email me at bucknbeck@verizon.net.  I'll try to compress my 
+local copy and send it to you.  Thanks.
 
-Laravel aims to make the development process a pleasing one for the developer without sacrificing application functionality. Happy developers make the best code. To this end, we've attempted to combine the very best of what we have seen in other web frameworks, including frameworks implemented in other languages, such as Ruby on Rails, ASP.NET MVC, and Sinatra.
+# **Details for Teaching Team**
+<!--
+No login is required.
+Extra Challenges:
+Make it look nice.
+Input validation was implemented by using radio buttons and select boxes containing only valid values.
+(If nothing is selected, the defaulted settings are used).
+-->
+User table is only used to store the email and password for the webmaster (which are bucknbeck@verizon.net and bnb123).
+The site is for the Braddock Heights Community Association.  I live in Braddock Heights, and created the first part of 
+this site last spring for CSCI-E12 Fundamentals of Website Development, taught by Professor David Heitmeyer.  This is a 
+website with an audience made up mostly of residents of my neighborhood Braddock Heights, MD, who are members of the 
+Braddock Heights Community Association and/or members of the Braddock Heights community pool.  Additionally, there is a 
+small audience of people who just wish to learn more about Braddock Heights before visiting or moving here.  Because of this,
+only the webmaster has access for creating, updating, and deleting.  Here's a link to their old website, if you 
+want to compare: www.braddockheights.org.  The one entry (or possibly several eventually) is just entered into the users
+table via seeding.  There are log in and log out features provided for the webmaster, but not sign up.  That code is there
+but commented out.  Additionally, some of the warning/alert-type messages are worded more for a webmaster than a regular
+user, e.g., referring to actual table names, as long as it's something only the webmaster would see, such as during the 
+create of committee members.
 
-Laravel is accessible, yet powerful, providing powerful tools needed for large, robust applications. A superb inversion of control container, expressive migration system, and tightly integrated unit testing support give you the tools you need to build any application with which you are tasked.
+Database seeders  - my one seeder, BraddockheightsSeeder.php, is called by DatabaseSeeder.php, and that seeds
+my three tables: users, bhca_members, and committee_members.
 
-## Official Documentation
+I did create a /truncate route, which you can use to clean out my tables if you need to.
 
-Documentation for the entire framework can be found on the [Laravel website](http://laravel.com/docs).
+In BHCA_style.css, there is code that generates a CSS error.  I left it in to get the desired
+level of sepia.
 
-### Contributing To Laravel
-
-**All issues and pull requests should be filed on the [laravel/framework](http://github.com/laravel/framework) repository.**
-
-### License
-
-The Laravel framework is open-sourced software licensed under the [MIT license](http://opensource.org/licenses/MIT)
+# **Outside Code**

@@ -1,17 +1,17 @@
-<!DOCTYPE html>
-<html>
+@extends('_master') 
 
-<head>
+@section('title') 
+    Braddock Heights Home Page 
+@stop 
 
-    <?php $thisTitle="Braddock Heights Home Page" ; include( "htmlhead.php"); ?>
+@section('head') 
+@stop 
 
-</head>
-
-<body>
+@section('content')
 
     <div id="wrapper">
 
-        <?php $thisPage="Home" ; include( "header_and_nav.php"); ?>
+        <?php $thisPage="Home" ; include( "/../app/views/header_and_nav.blade.php"); ?>
         
         <div id="spacer">
             <p>  </p>
@@ -22,32 +22,32 @@
                 <div id="newsletter">
                     <a href="http://www.google.com/url?sa=t&amp;rct=j&amp;q=&amp;esrc=s&amp;source=web&amp;cd=7&amp;ved=0CFUQFjAG&amp;url=http%3A%2F%2Fwww.braddockhistory.org%2Fwinter2013.pdf&amp;ei=c59uU-bCEafLsATMvYHwDQ&amp;usg=AFQjCNGFeiRaM1T8k2uzWrgwc1385LD-1A&amp;sig2=JNUOWiJAWz0VrhByfOqXyQ&amp;bvm=bv.66111022,d.cWc&amp;cad=rja" target="_blank">Braddock Heights Historical Society Newsletter</a>
                 </div>
-
+                
                 <div id="social_media_icons" class="sepia">
                     <ul id="icon_list">
                         <li>
                             <a href="#">
-                                <img src="images/social/facebook.png" alt="Vintage social media icon for Facebook" width="40" height="40">
+                                <img src="/images/social/facebook.png" alt="Vintage social media icon for Facebook" width="40" height="40">
                             </a>
                         </li>
                         <li>
                             <a href="#">
-                                <img src="images/social/google.png" alt="Vintage social media icon for Google" width="40" height="40">
+                                <img src="/images/social/google.png" alt="Vintage social media icon for Google" width="40" height="40">
                             </a>
                         </li>
                         <li>
                             <a href="#">
-                                <img src="images/social/twitter.png" alt="Vintage social media icon for Twitter" width="40" height="40">
+                                <img src="/images/social/twitter.png" alt="Vintage social media icon for Twitter" width="40" height="40">
                             </a>
                         </li>
                         <li>
                             <a href="#">
-                                <img src="images/social/yahoo.png" alt="Vintage social media icon for Yahoo" width="40" height="40">
+                                <img src="/images/social/yahoo.png" alt="Vintage social media icon for Yahoo" width="40" height="40">
                             </a>
                         </li>
                         <li>
                             <a href="#">
-                                <img src="images/social/youtube.png" alt="Vintage social media icon for YouTube" width="40" height="40">
+                                <img src="/images/social/youtube.png" alt="Vintage social media icon for YouTube" width="40" height="40">
                             </a>
                         </li>
                     </ul>
@@ -98,15 +98,10 @@
             <p>Want more information? Want to
                 <a href="#">join the pool</a> or reserve the pavilion or community center? Want to get involved to help? Please contact Tom Dixon, BHCA Secretary, at president@braddockheights.org.</p>
             <br/>
-
-
         </div>
-    
-        <!-- the footer -->
-         <?php include( "footer.php"); ?>
-    
     </div>
+@stop
 
-</body>
-
-</html>
+@section('footer')        
+    <?php include( "/../app/views/footer.blade.php"); ?>
+@stop 

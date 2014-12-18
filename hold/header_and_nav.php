@@ -5,7 +5,7 @@
             <p id="BHCA_logo_2nd_line">A Community with an Altitude...</p>
         </div>
         <div class="right">
-            <img id="BH_postcard" src="images/postcards/md_braddock_heights01.gif" alt="Bird's eye view of Braddock Heights, MD, showing Middletown at distance." width="160" height="100">
+            <img id="BH_postcard" src="../images/postcards/md_braddock_heights01.gif" alt="Bird's eye view of Braddock Heights, MD, showing Middletown at distance." width="160" height="100">
         </div>
     </div>
 

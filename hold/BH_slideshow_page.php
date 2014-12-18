@@ -13,7 +13,7 @@
 
 <head>
     
-    <?php $thisTitle="Historical Postcards" ; include( "htmlhead.php"); ?>
+    <!--<?php $thisTitle="Historical Postcards" ; include( "htmlhead.php"); ?>-->
     
 </head>
 

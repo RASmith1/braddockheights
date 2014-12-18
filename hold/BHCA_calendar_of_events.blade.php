@@ -3,7 +3,7 @@
 
 <head>
 
-    <?php $thisTitle="Calendar of Events" ; include( "htmlhead.php"); ?>
+    <!--<?php $thisTitle="Calendar of Events" ; include( "/../app/views/htmlhead.blade.php"); ?>-->
     
 </head>
 
@@ -12,7 +12,7 @@
 
     <div id="calendar_wrapper">
 
-        <?php $thisPage="Calendar of Events" ; include( "header_and_nav.php"); ?>
+        <?php $thisPage="Calendar of Events" ; include( "/../app/views/header_and_nav.blade.php"); ?>
 
         <div id="frame_wrapper">
 
@@ -20,7 +20,7 @@
         </div>
         
         <!-- the footer -->
-         <?php include( "footer.php"); ?>
+         <?php include( "/../app/views/footer.blade.php"); ?>
 
     </div>
 

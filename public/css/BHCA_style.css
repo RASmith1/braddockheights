@@ -48,38 +48,98 @@
     /* in order to remove errors messages in      */
     /* W3C CSS3 validation. They cause those error*/
     /* messages, but the sepia effect works fine. */
-    /*filter: sepia(30%);
-    -moz-filter: sepia(30%);
-    -o-filter: sepia(30%);
-    -ms-filter: sepia(30%)
-    -webkit-filter: sepia(30%);*/
+    filter: sepia(40%);
+    -moz-filter: sepia(40%);
+    -o-filter: sepia(40%);
+    -ms-filter: sepia(40%)
+    -webkit-filter: sepia(40%);
 }
 .sepia {
      /* The following filters can be commented out */
     /* in order to remove errors messages in      */
     /* W3C CSS3 validation. They cause those error*/
     /* messages, but the sepia effect works fine. */
-    /*filter: sepia(60%);
-    -moz-filter: sepia(60%);
-    -o-filter: sepia(60%);
-    -ms-filter: sepia(60%)
-    -webkit-filter: sepia(60%);*/
+    filter: sepia(100%);
+    -moz-filter: sepia(100%);
+    -o-filter: sepia(100%);
+    -ms-filter: sepia(100%)
+    -webkit-filter: sepia(100%);
 }
 
 @font-face {
     font-family: myFirstFont;
-    src: url(../fonts/aflfont.TTF);
+    src: url('/fonts/aflfont.TTF');
 }
+
+/*******************************************************/
+
+.members_table {
+    /* This doesn't seem to have any effect */
+    cellspacing: 10px;    
+}
+
+.member_entry {   
+    display: table;
+    margin-bottom: 0px;
+    background-color: white;
+    border-style: outset;
+    border-color: #582f2f;
+    border-width: 4px;
+    box-shadow: 1px 2px 3px 2px #582f2f;
+    font-family: myFirstFont;
+    font-size: 1.25em;
+    width: 97%; 
+}
+
+.member_left {
+    display: table-cell;
+    width: 15%;
+    vertical-align: top;
+    padding-top: 10px;
+}
+.member_right {
+    display: table-cell;
+    width: 80%;
+    vertical-align: top;
+    text-align: left;
+    padding-top: 10px;
+    margin-right: 20px;
+}
+.member_pic {
+    object-fit: contain;
+    border: 3px solid #582f2f;
+}
+
+iframe#board_frame {
+    border: solid 6px #582f2f;
+     /* Uncomment once this passes validation in W3C CSS3 */
+     /* sandbox makes it safer to run code in iframes     */
+/*    sandbox: "allow-scripts allow-popups allow-forms";*/
+    margin-top: 10px;
+    
+}
+
+/*.member_td {
+    border: 1px solid #582f2f;
+    background-color: white;
+}
+
+.member_th {
+    border: 1px solid #582f2f;
+    background-color: white;
+}*/
+
+/*******************************************************/
 
 body {   
     background-position: 0;
-    background-image: url(../images/backgrounds/background19_big.jpg);
+    background-image: url('/images/backgrounds/background19_big.jpg');
     background-repeat: round; 
     color: #582f2f;
     font-family: myFirstFont, calibri, verdana, tahoma, arial, helvetica, sans-serif;
     /* The right-margin setting below is to account for  */
     /* centering, given the scrollbar on the right side. */
-    margin-right: 19px;
+    /*margin-right: 19px;*/
     text-align: center;
 }
 
@@ -93,6 +153,10 @@ body {
 #header_wrapper {
     width: inherit;
     margin: auto auto auto 8px;
+}
+
+h1 {
+    color: #582f2f;
 }
 
 #updates_wrapper {    
@@ -123,21 +187,107 @@ body {
     font-family: myFirstFont;
 }
 #footer {
-    margin-top: 20px;
-    margin-right: auto;
-    margin-left: auto;
+    margin: 30px 20px 0px 20px;
     clear: both;
     width: inherit;
     font-size: smaller; 
     font-family: myFirstFont;
     background-color: white;
-    border-spacing: 10px;
     border-style: outset;
     border-color: #582f2f;
     border-width: 6px;  
+    box-shadow: 1px 2px 3px 2px #582f2f;
 }
 #footer p { 
     padding: 1em; 
+}
+
+/**********************/
+
+.white_text {
+    color: white;
+    text-shadow: 1px 3px #582f2f;
+}
+.big_white_text {
+    color: white;
+    text-shadow: 1px 2px #582f2f;
+    font-size: 2.00em;
+}
+.small_white_text {
+    color: white;
+    text-shadow: 1px 2px #582f2f;
+    font-size: 1.35em;
+}
+.webmaster_small_brown_text {
+    color: #582f2f;
+    font-size: 1.00em;
+}
+.webmaster_small_white_text {
+    color: white;
+    text-shadow: 1px 2px #582f2f;
+    font-size: 1.75em;
+    margin-right: 10px;
+}
+.webmaster_cruds {
+    margin-right: 5px;
+}
+.webmaster_crud {
+    float: right;
+    margin-right: 10px;
+}
+.to_vertical_align {
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+}
+.webmaster_crud_enabled {
+    float: right;
+    margin-right: 10px;
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+}
+.webmaster_crud_disabled {
+    float: right;
+    margin-right: 10px;
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+    display: none;
+}
+.disabled {
+    display: none;
+}
+.float_left {
+    float: left;
+}
+.float_right {
+    float: right;
+}
+.clear_left {
+    clear: left;
+}
+.clear_right {
+    clear: right;
+}
+.clear_both {
+    clear: both;
+}
+/*.flash-message {
+    width:100%;
+    position:absolute;
+}*/
+.crud_flash_message {
+    color: #7f0000;
+   /* text-shadow: 1px 2px #582f2f;*/
+    text-shadow: 0px 0px;
+    font-size: 1.95em;
+}
+.crud_warning_message {
+    color: #7f0000;
+    text-shadow: 0px 0px;
+    font-size: 0.85em;
+    font-weight: bold;
 }
 
 /**********************/
@@ -149,8 +299,8 @@ body {
     font-weight: bold;
 }
 
-#frame_wrapper {
-    width: inherit;
+#calendar_frame_wrapper {
+    width: 960;
     margin: auto auto auto 2px;
 }
 
@@ -163,11 +313,25 @@ body {
     font-weight: bold;
 }
 
-#slideshow_wrapper {
-    width: inherit;
+#postcards_frame_wrapper {
+    width: 960;
     margin: auto auto auto 2px;
 }
 
+/**********************/
+
+#board_wrapper {
+    width: 960px;
+    margin: 10px auto;
+    font-family: myFirstFont;
+    font-weight: bold;
+   /* align-content: center;*/
+}
+
+#board_frame_wrapper {
+    width: 960;
+    margin: auto auto auto 2px;
+}
 
 /*******************************************************/
 
@@ -175,11 +339,12 @@ body {
     display: table;
     margin-bottom: 8px;
     background-color: white;
-    border-spacing: 10px;
     border-style: outset;
     border-color: #582f2f;
-    border-width: 15px;
-    border-radius: 2px;
+    border-width: 8px;
+    box-shadow: 1px 2px 3px 2px #582f2f;
+    margin-left:auto; 
+    margin-right:auto;
 }
 .left {
     display: table-cell;
@@ -322,9 +487,17 @@ nav ul li#iamhere a:hover {
 }
 
 
-/* I added markup below to keep page from moving right or  */
-/* left when scroll bar was removed or added, respectively */
+/* I added markup statement below to keep page from moving right or  */
+/* left when scroll bar was removed or added, respectively           */
 html {overflow-y: scroll;}
+
+/*******************************************************/
+
+.auth_check {
+    /*border: 3px solid #582f2f;
+    background-color: #bd7d7d;*/
+    vertical-align: top;
+}
 
 /*******************************************************/
 
@@ -337,6 +510,7 @@ html {overflow-y: scroll;}
 }
 
 /*******************************************************/
+
 
 #updates_row {     
     display: table;
@@ -496,20 +670,9 @@ ul {
 
 /*******************************************************/
 
-iframe#calendar_frame {
+iframe#generic_frame {
     border: solid 6px #582f2f;
      /* Uncomment once this passes validation in W3C CSS3 */
-     /* sandbox makes it safer to run code in iframes     */
-/*    sandbox: "allow-scripts allow-popups allow-forms";*/
-    margin-top: 10px;
-    
-}
-
-/*******************************************************/
-
-iframe#slideshow_frame {
-    border: solid 6px #582f2f;
-    /* Uncomment once this passes validation in W3C CSS3 */
      /* sandbox makes it safer to run code in iframes     */
 /*    sandbox: "allow-scripts allow-popups allow-forms";*/
     margin-top: 10px;

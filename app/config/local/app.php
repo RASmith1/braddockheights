@@ -14,5 +14,7 @@ return array(
 	*/
 
 	'debug' => true,
+	/* NOTE: I added url entry below */
+	'url'   => 'http://localhost',
 
 );

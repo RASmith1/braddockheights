@@ -1,5 +1,10 @@
-<!DOCTYPE html>
-<html>
+@extends('_master') 
+
+@section('title') 
+    Historical Postcard Slideshow
+@stop 
+
+@section('head') 
 
 <!--
 		Supersized - Fullscreen Slideshow jQuery Plugin
@@ -10,25 +15,6 @@
 		Company : One Mighty Roar (www.onemightyroar.com)
 		License : MIT License / GPL License
 	-->
-
-<head>
-
-    <title>Historical Postcards</title>
-    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
-
-    <link rel="stylesheet" href="css/BHCA_style.css" type="text/css" />
-
-    <link rel="stylesheet" href="css/supersized.css" type="text/css" media="screen" />
-    <link rel="stylesheet" href="css/supersized.shutter.css" type="text/css" media="screen" />
-
-    <!-- Use jQuery CDN as indicated on this site: http://jquery.com/download/ -->
-    <script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
-    <script src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
-
-    <script type="text/javascript" src="js/jquery.easing.min.js"></script>
-
-    <script type="text/javascript" src="js/supersized.3.2.7.min.js"></script>
-    <script type="text/javascript" src="js/supersized.shutter.min.js"></script>
 
     <script type="text/javascript">
         jQuery(function($) {
@@ -44,40 +30,40 @@
                 slide_links: 'blank', // Individual links for each slide (Options: false, 'num', 'name', 'blank')
                 slides: [ // Slideshow Images
                     {
-                        image: 'images/postcards/BH_Grove_of_Golden_Stars.jpg',
+                        image: '/images/postcards/BH_Grove_of_Golden_Stars.jpg',
                         title: 'Braddock Heights Grove of the Golden Stars'
                     }, {
-                        image: 'images/postcards/BH_Washington_Cottage.jpg',
+                        image: '/images/postcards/BH_Washington_Cottage.jpg',
                         title: 'Washington Cottage in Braddock Heights, MD'
                     }, {
-                        image: 'images/postcards/BH_roller_rink.jpg',
+                        image: '/images/postcards/BH_roller_rink.jpg',
                         title: 'Braddock Heights Roller Rink'
                     }, {
-                        image: 'images/postcards/BH_roller_rink2.jpg',
+                        image: '/images/postcards/BH_roller_rink2.jpg',
                         title: 'Second picture of Braddock Heights Roller Rink'
                     }, {
-                        image: 'images/postcards/BH_carousel_horse.jpg',
+                        image: '/images/postcards/BH_carousel_horse.jpg',
                         title: 'Braddock Heights Carousel Horse'
                     }, {
-                        image: 'images/postcards/BH_Dance_Hall.jpg',
+                        image: '/images/postcards/BH_Dance_Hall.jpg',
                         title: 'Braddock Heights Dance Hall'
                     }, {
-                        image: 'images/postcards/md_braddock_heights01.gif',
+                        image: '/images/postcards/md_braddock_heights01.gif',
                         title: 'View of Braddock Heights'
                     }, {
-                        image: 'images/postcards/BH_from_Observatory.jpg',
+                        image: '/images/postcards/BH_from_Observatory.jpg',
                         title: 'View of Braddock Spring from the Observatory'
                     }, {
-                        image: 'images/postcards/BH_Schley_Inn.jpg',
+                        image: '/images/postcards/BH_Schley_Inn.jpg',
                         title: 'Camp Schley Inn and Lovers Lane'
                     }, {
-                        image: 'images/postcards/BH_Picnic_Day.jpg',
+                        image: '/images/postcards/BH_Picnic_Day.jpg',
                         title: 'Braddock Heights Picnic Day'
                     }, {
-                        image: 'images/postcards/BH_Spring.jpg',
+                        image: '/images/postcards/BH_Spring.jpg',
                         title: 'Braddock Spring Near the Six-Mile House'
                     }, {
-                        image: 'images/postcards/BH_Spring2.jpg',
+                        image: '/images/postcards/BH_Spring2.jpg',
                         title: 'Second picture of Braddock Spring'
                     }
                 ]
@@ -96,7 +82,7 @@
             float: left;
             clear: both;
             color: #aaa;
-            background: url('images/Supersized/bg-black.png');
+            background: url('/images/Supersized/bg-black.png');
             font: 11px Helvetica, Arial, sans-serif;
         }
         ul#demo-block li a {
@@ -104,15 +90,16 @@
             font-weight: bold;
         }
     </style>
-</head>
+@stop 
 
-<body>
+@section('content')
+
     <!--Demo styles (you can delete this block)-->
 
     <ul id="demo-block">
         <li>
             <a href="http://buildinternet.com/project/supersized/" target="_blank">
-                <img src="images/Supersized/supersized-logo.png" alt="Supersized logo" />
+                <img src="/images/Supersized/supersized-logo.png" alt="Supersized logo" />
             </a>
         </li>
     </ul>
@@ -142,7 +129,7 @@
         <div id="controls">
 
             <a id="play-button">
-                <img id="pauseplay" src="images/Supersized/pause.png" alt="Pause-Play button" />
+                <img id="pauseplay" src="/images/Supersized/pause.png" alt="Pause-Play button" />
             </a>
 
             <!--Slide counter-->
@@ -156,7 +143,7 @@
 
             <!--Thumb Tray button-->
             <a id="tray-button">
-                <img id="tray-arrow" src="images/Supersized/button-tray-up.png" alt="Button to open thumb tray" />
+                <img id="tray-arrow" src="/images/Supersized/button-tray-up.png" alt="Button to open thumb tray" />
             </a>
 
             <!--Navigation-->
@@ -165,6 +152,4 @@
         </div>
     </div>
 
-</body>
-
-</html>
+@stop

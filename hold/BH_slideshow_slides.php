@@ -17,14 +17,14 @@
     <title>Supersized - Full Screen Background Slideshow jQuery Plugin</title>
     <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
 
-    <link rel="stylesheet" href="css/supersized.css" type="text/css" media="screen" />
-    <link rel="stylesheet" href="css/supersized.shutter.css" type="text/css" media="screen" />
+    <link rel="stylesheet" href="../css/supersized.css" type="text/css" media="screen" />
+    <link rel="stylesheet" href="../css/supersized.shutter.css" type="text/css" media="screen" />
 
     <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.1/jquery.min.js"></script>
-    <script type="text/javascript" src="js/jquery.easing.min.js"></script>
+    <script type="text/javascript" src="../js/jquery.easing.min.js"></script>
 
-    <script type="text/javascript" src="js/supersized.3.2.7.min.js"></script>
-    <script type="text/javascript" src="js/supersized.shutter.min.js"></script>
+    <script type="text/javascript" src="../js/supersized.3.2.7.min.js"></script>
+    <script type="text/javascript" src="../js/supersized.shutter.min.js"></script>
 
     <script type="text/javascript">
         jQuery(function($) {
@@ -61,12 +61,12 @@
                 thumbnail_navigation: 0, // Thumbnail navigation
                 slides: [ // Slideshow Images
                     { <? php //path to directory to scan
-                        $directory = "images/postcards/"; //get all image files with a .jpg extension.
-                        $directory_thumbs = "images/postcards/thumbs/";
+                        $directory = "/images/postcards/"; //get all image files with a .jpg extension.
+                        $directory_thumbs = "/images/postcards/thumbs/";
                         $images = glob($directory.
-                            "*.png"); //print each file name
+                            "*.*"); //print each file name
                         $images_thumb = glob($directory_thumbs.
-                            "*.png");
+                            "*.*");
                         $images_final = array_combine($images, $images_thumb);
                         foreach($images_final as $image = > $key) {
                             echo "{image : ' $image ', title : ' $image ' , thumb : '$key' },";
@@ -140,7 +140,7 @@
         float: left;
         clear: both;
         color: #aaa;
-        background: url('img/bg-black.png');
+        background: url('../images/Supersized/bg-black.png');
         font: 11px Helvetica, Arial, sans-serif;
     }
     ul#demo-block li a {
@@ -156,7 +156,7 @@
     <ul id="demo-block">
         <li>
             <a href="http://buildinternet.com/project/supersized/" target="_blank">
-                <img src="img/supersized-logo.png" />
+                <img src="../images/Supersized/supersized-logo.png" />
             </a>
         </li>
         <li>Photographers:
@@ -191,7 +191,7 @@
         <div id="controls">
 
             <a id="play-button">
-                <img id="pauseplay" src="img/pause.png" />
+                <img id="pauseplay" src="../images/Supersized/pause.png" />
             </a>
 
             <!--Slide counter-->
@@ -205,7 +205,7 @@
 
             <!--Thumb Tray button-->
             <a id="tray-button">
-                <img id="tray-arrow" src="img/button-tray-up.png" />
+                <img id="tray-arrow" src="../images/Supersized/button-tray-up.png" />
             </a>
 
             <!--Navigation-->
