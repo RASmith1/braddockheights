@@ -148,7 +148,7 @@ Route::any('form-submit', function(){
 * This will output some debugging information about application's   
 * environment and database connection. */
 
-/*
+
 Route::get('/debug', function() {
 
     echo '<pre>';
@@ -193,4 +193,4 @@ Route::get('/debug', function() {
     echo '</pre>';
 
 });
-*/
+
