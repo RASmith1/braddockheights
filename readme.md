@@ -5,27 +5,22 @@
 *http://braddockheights.dynamicweb.me*
 
 # **Description sentences**
-P3/Developer's BFF: This Laravel Basics project introduces the student developer to and immerses them 
-in learning the industry-standard skills needed to develop a Laravel-based website.  These skills include 
-planning the website pages and corresponding routes, installing Composer, incorporating dependencies 
-obtained from packagist.org and/or github, committing modifications to github.com, setting up facades, 
-adjusting environment settings, coding the routes, creating views and templates, using Blade syntax, 
-passing data to views, testing the URLs, and deploying the new website to the server.
+P4/Braddock Heights Community Association website: This final course project project brings together all of the aspects of
+dynamic web development that we've been studying this fall in CSCI-E15.  These skills include planning the website pages 
+and corresponding routes, installing Composer, incorporating dependencies obtained from packagist.org and/or github, 
+committing modifications to github.com, setting up facades, 
+adjusting environment settings, coding the routes, creating views and templates, using Blade syntax, using models, 
+planning, configuring, creating, modifying, and accessing a database, passing data to views, testing the URLs, and 
+deploying the new website to the server.
 
 # **Demo information** 
-My demo is a Jing capture at http://screencast.com/t/kbVPiToljvyJ .  I did have to create this three
+My demo is a Jing capture at http://screencast.com/t/YdNIJczgb .  I did have to create this three
 times, and when I go to the link that it put on my clipboard, it brings me to Jing, but I don't see the screen cast, 
 which I thought I would.  If you can't see it, please email me at bucknbeck@verizon.net.  I'll try to compress my 
 local copy and send it to you.  Thanks.
 
 # **Details for Teaching Team**
-<!--
-No login is required.
-Extra Challenges:
-Make it look nice.
-Input validation was implemented by using radio buttons and select boxes containing only valid values.
-(If nothing is selected, the defaulted settings are used).
--->
+
 User table is only used to store the email and password for the webmaster (which are bucknbeck@verizon.net and bnb123).
 The site is for the Braddock Heights Community Association.  I live in Braddock Heights, and created the first part of 
 this site last spring for CSCI-E12 Fundamentals of Website Development, taught by Professor David Heitmeyer.  This is a 
@@ -39,12 +34,16 @@ but commented out.  Additionally, some of the warning/alert-type messages are wo
 user, e.g., referring to actual table names, as long as it's something only the webmaster would see, such as during the 
 create of committee members.
 
+A big part of the work I did for this was getting this site into Laravel format, using controllers, routes, a model, etc. 
+It was tough because I'd implemented the site last spring using an iframe that stays on the page and holds all the changing
+content, and that was tricky to get to work with the routes.
+
 Database seeders  - my one seeder, BraddockheightsSeeder.php, is called by DatabaseSeeder.php, and that seeds
 my three tables: users, bhca_members, and committee_members.
 
 I did create a /truncate route, which you can use to clean out my tables if you need to.
 
-In BHCA_style.css, there is code that generates a CSS error.  I left it in to get the desired
-level of sepia.
+I'm having some trouble on the server side, but hopefully by the time you get this, I'll have it resolved.
 
 # **Outside Code**
+Outside code is documented within the software with links to their sourse.
