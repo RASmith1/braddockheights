@@ -149,6 +149,7 @@ Route::any('form-submit', function(){
 * environment and database connection. */
 
 
+/*
 Route::get('/debug', function() {
 
     echo '<pre>';
@@ -194,3 +195,4 @@ Route::get('/debug', function() {
 
 });
 
+*/

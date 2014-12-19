@@ -11,6 +11,7 @@
 
     <div id="board_wrapper">
         
+       <!-- <?php $thisPage="BHCA_Board" ; include( "header_and_nav.blade.php"); ?>-->
         <?php $thisPage="BHCA_Board" ; include( "/../app/views/header_and_nav.blade.php"); ?>
 
         <div id="board_frame_wrapper">
