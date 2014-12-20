@@ -30,7 +30,11 @@ class BhcaMemberController extends \BaseController {
 	 */
 	public function create()
 	{
-		return View::make('bhca_member_create');
+        return Redirect::action('CommitteeMemberController@index')
+                    ->with('flash_message',
+                           '<b class="crud_flash_message">This feature has not yet been implemented although the bhca_members table has been seeded.</b>');
+        
+		/*return View::make('bhca_member_create');*/
 	}
 
 
@@ -42,15 +46,9 @@ class BhcaMemberController extends \BaseController {
 	public function store()
 	{
         
-       /* $bhca_member->first_name   = 'Amy';
-        $bhca_member->middle_name  = 'Ann';
-        $bhca_member->last_name    = 'Adams';
-        $bhca_member->first_email  = 'AAA@gmail.com';
-        $bhca_member->second_email = 'AAA@verizon.net';
-        $bhca_member->address      = 'AAA Alberta Ave.\nAlberta, AL 00000';
-        $bhca_member->initial_date_of_membership     = '2014-12-15';
-        $bhca_member->date_of_last_processed_payment = '2014-12-15';
-        $bhca_member->save();*/
+        return Redirect::action('CommitteeMemberController@index')
+                    ->with('flash_message',
+                            '<b class="crud_flash_message">This feature has not yet been implemented although the bhca_members table has been seeded.</b>');
         
 		$rules = array(
             'first_name' => 'required',
@@ -97,7 +95,9 @@ class BhcaMemberController extends \BaseController {
 	 */
 	public function show($id)
 	{
-		//
+		return Redirect::action('CommitteeMemberController@index')
+                    ->with('flash_message',
+                           '<b class="crud_flash_message">This feature has not yet been implemented although the bhca_members table has been seeded.</b>')
 	}
 
 
@@ -109,7 +109,9 @@ class BhcaMemberController extends \BaseController {
 	 */
 	public function edit($id)
 	{
-		//
+		return Redirect::action('CommitteeMemberController@index')
+                    ->with('flash_message',
+                           '<b class="crud_flash_message">This feature has not yet been implemented although the bhca_members table has been seeded.</b>')
 	}
 
 
@@ -121,7 +123,9 @@ class BhcaMemberController extends \BaseController {
 	 */
 	public function update($id)
 	{
-		//
+		return Redirect::action('CommitteeMemberController@index')
+                    ->with('flash_message',
+                           '<b class="crud_flash_message">This feature has not yet been implemented although the bhca_members table has been seeded.</b>')
 	}
 
 
@@ -133,7 +137,9 @@ class BhcaMemberController extends \BaseController {
 	 */
 	public function destroy($id)
 	{
-		//
+		return Redirect::action('CommitteeMemberController@index')
+                    ->with('flash_message',
+                           '<b class="crud_flash_message">This feature has not yet been implemented although the bhca_members table has been seeded.</b>')
 	}
 
 

@@ -213,6 +213,21 @@ h1 {
     text-shadow: 1px 2px #582f2f;
     font-size: 2.00em;
 }
+.med_login_text {
+    color: white;
+    text-shadow: 1px 1px #582f2f;
+    font-size: 1.75em;
+}
+.med_edit_text {
+    color: white;
+    text-shadow: 1px 2px #582f2f;
+    font-size: 1.75em;
+}
+.small_edit_text {
+    color: #582f2f;
+    /*text-shadow: 1px 2px #582f2f;*/
+    font-size: 1.35em;
+}
 .small_white_text {
     color: white;
     text-shadow: 1px 2px #582f2f;
@@ -255,6 +270,15 @@ h1 {
     transform: translateY(-50%);
     display: none;
 }
+.nonselectable {
+    -webkit-user-select: none; /* Chrome/Safari */        
+    -moz-user-select: none; /* Firefox */
+    -ms-user-select: none; /* IE10+ */
+
+    /* Rules below not implemented in browsers yet */
+    -o-user-select: none;
+    user-select: none;
+}
 .disabled {
     display: none;
 }
@@ -273,10 +297,10 @@ h1 {
 .clear_both {
     clear: both;
 }
-/*.flash-message {
-    width:100%;
-    position:absolute;
-}*/
+.flash-message {
+    /*width:100%;
+    position:absolute;*/
+}
 .crud_flash_message {
     color: #7f0000;
    /* text-shadow: 1px 2px #582f2f;*/
@@ -289,6 +313,20 @@ h1 {
     font-size: 0.85em;
     font-weight: bold;
 }
+.required {
+    input:after { content:"*"; }
+}
+input[required], select[required] {
+    background-image: url('/images/backgrounds/star.png');
+    background-repeat: no-repeat;
+    background-position-x: right;
+}
+
+/*.column_heading {
+    font-weight: bold;
+    text-decoration: underline;
+    font-size: 1.00em;
+}*/
 
 /**********************/
 
@@ -332,6 +370,12 @@ h1 {
     width: 960;
     margin: auto auto auto 2px;
 }
+.middle_panel {
+    width: 60%;
+    text-align: left;
+    margin-left: auto;
+    margin-right: auto;
+}
 
 /*******************************************************/
 
@@ -339,9 +383,12 @@ h1 {
     display: table;
     margin-bottom: 8px;
     background-color: white;
+    border-spacing: 10px;
     border-style: outset;
     border-color: #582f2f;
+    /*border-width: 8px;*/
     border-width: 8px;
+    border-radius: 2px;
     box-shadow: 1px 2px 3px 2px #582f2f;
     margin-left:auto; 
     margin-right:auto;

@@ -11,7 +11,10 @@
 
     <div id="wrapper">
 
-        <?php $thisPage="Home" ; include( "/../app/views/header_and_nav.blade.php"); ?>
+        <?php $thisPage="Home" ; ?>
+        <header class="row">
+		      @include('includes.header_and_nav')
+	    </header>
         
         <div id="spacer">
             <p>  </p>
@@ -103,5 +106,7 @@
 @stop
 
 @section('footer')        
-    <?php include( "/../app/views/footer.blade.php"); ?>
+    <footer class="row">
+		@include('includes.footer')
+	</footer>
 @stop 

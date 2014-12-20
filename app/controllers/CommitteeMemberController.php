@@ -55,45 +55,20 @@ class CommitteeMemberController extends \BaseController {
 	 */
 	public function store()
 	{   
-        
-
-            /*$rules = array(
-                'first_name' => 'required',
-                'last_name' => 'required',
-                'email' => 'required|email'
-            );
-
-            $validator = Validator::make(Input::all(), $rules);
-
-            if($validator->fails()) {
-
-                return Redirect::to('committee_member/create')
-                        ->with('flash-message','<b class="crud_flash_message">Create Committee Member failed; please fix the errors listed below.</b>')
-                        ->withInput()
-                        ->withErrors($validator);                        
-*/
-            /* From this site: http://maxoffsky.com/code-blog/uploading-files-in-laravel-4/ */
-            /* One method for uploading a file. */
-            
-            /*$file = Input::file('file');
-            $destinationPath = 'uploads';
-            // If the uploads fail due to file system, you can try doing public_path().'/uploads' 
-            $filename = str_random(12);
-            //$filename = $file->getClientOriginalName();
-            //$extension =$file->getClientOriginalExtension(); 
-            $upload_success = Input::file('file')->move($destinationPath, $filename);
-*/
-   /*         if( $upload_success ) {
-               return Response::json('success', 200);
-            } else {
-               return Response::json('error', 400);
-            }*/
-        
+        try 
+        {
             $committee_member = new CommitteeMember;
             $committee_member->bhca_member_id = Input::get('bhca_member_id');
             $committee_member->first_name = Input::get('first_name');
             $committee_member->middle_name = Input::get('middle_name');
             $committee_member->last_name = Input::get('last_name');
+            
+           /* $committee_member->picture = Input::file('picture');*/
+            /*$filename = $file->getClientOriginalName(); 
+            $file = $file->move('/images/people',  $filename);*/
+            /*$committee_member->picture = $file;*/
+            
+            $committee_member->picture = Input::get('picture');
             $committee_member->email = Input::get('email');
             $committee_member->committee_position = Input::get('committee_position');
             $committee_member->bio = Input::get('bio');
@@ -104,16 +79,14 @@ class CommitteeMemberController extends \BaseController {
             $committee_member->property_committee_member = Input::get('property_committee_member');
             $committee_member->membership_committee_member = Input::get('membership_committee_member');
             $committee_member->save();
-
+            
             return Redirect::action('CommitteeMemberController@index')
-                        ->with('flash_message','<b class="crud_flash_message">Your Committee Member has been successfully added.</b>');
+                    ->with('flash_message','<b class="crud_flash_message">Your Committee Member has been successfully added.</b>');
+        }
+		catch(Exception $e) {
+            return Redirect::to('/committee_member')->with('flash_message','<b class="crud_flash_message">Committee member not created.</b>');
+		}
         
-		/*catch(exception $e) {
-		    return Redirect::to('/committee_member/create')
-                ->with('flash_message', '<b class="crud_flash_message">Creation failed for committee-member information entered.</b>')
-                ->withInput()
-                ->withErrors($validator); */
-		
 	}
 
 
@@ -125,7 +98,8 @@ class CommitteeMemberController extends \BaseController {
 	 */
 	public function show($id)
 	{
-		//
+		return Redirect::action('CommitteeMemberController@index')
+                    ->with('flash_message','<b class="crud_flash_message">This feature has not yet been implemented although all others have been.</b>');
 	}
 
 
@@ -137,9 +111,16 @@ class CommitteeMemberController extends \BaseController {
 	 */
 	public function edit($id)
 	{
-		$bhca_members = BhcaMember::getIdNamePair($id);
+		try {
+			$committee_member = CommitteeMember::findOrFail($id);  
+		}
+		catch(Exception $e) {
+            return Redirect::to('/committee_member')->with('flash_message','<b class="crud_flash_message">Committee member not found</b>');
+		}
+        
+        # Pass with the $committee_member object so we can do model binding on the form
+		return View::make('committee_member_edit')->with('committee_member', $committee_member);
 
-    	return View::make('committee_member_edit')->with('id', $id);
 	}
 
 
@@ -151,41 +132,46 @@ class CommitteeMemberController extends \BaseController {
 	 */
 	public function update($id)
 	{
-		try {
-			/*$committee_member = CommitteeMember::findOrFail($id);*/
-            $committee_member = CommitteeMember::with($id);
-
+        try {
+			$committee_member = CommitteeMember::findOrFail($id);
 		}
 		catch(Exception $e) {
-            return Redirect::action('CommitteeMemberController@getIndex')->with('flash-message','<b class="crud_flash_message">Committee member not found</b>');
+			return Redirect::to('/committee_member')->with('flash_message', '<b class="crud_flash_message">Committee member not found.</b>');
 		}
+       
+        try
+        {
+            /*$committee_member->picture = Input::file('picture');*/
+            /*$file = Input::file('picture');
+            $filename = $file->getClientOriginalName(); 
+            $file = $file->move('/images/people',  $filename);
+            $committee_member->picture      = $file;*/
+            $committee_member->picture = Input::get('picture');
+            $committee_member->first_name   = Input::get('first_name');
+            $committee_member->middle_name  = Input::get('middle_name');
+            $committee_member->last_name    = Input::get('last_name');
+            $committee_member->email        = Input::get('email');
 
-        try {
-		    # http://laravel.com/docs/4.2/eloquent#mass-assignment
-		    $committee_member->fill(Input::except('bhca_member_id'));
-		    $committee_member->save();
+            $position = Input::get('committee_position');
 
-		   	return Redirect::action('CommitteeMemberController@getIndex')->with('flash_message','<b class="crud_flash_message">Your changes have been saved.</b>');
+            if ($position != 'Please select') {
+                $committee_member->committee_position = $position;
+            }
 
+            $committee_member->bio          = Input::get('bio');
+            $committee_member->bhca_board_member = Input::get('bhca_board_member');
+            $committee_member->bhca_pool_committee_member = Input::get('bhca_pool_committee_member');
+            $committee_member->finance_committee_member = Input::get('finance_committee_member');
+            $committee_member->programs_committee_member = Input::get('programs_committee_member');
+            $committee_member->property_committee_member = Input::get('property_committee_member');
+            $committee_member->membership_committee_member = Input::get('property_committee_member');
+            $committee_member->save();
+
+            return Redirect::action('CommitteeMemberController@index')->with('flash_message','<b class="crud_flash_message">Your committee member update has been saved.</b>');
 		}
-		catch(exception $e) {
-	        return Redirect::to('/committee_member')->with('flash_message', 'Error saving changes.');
-	    }
-        /*$committee_member->bhca_member_id = Input::get('bhca_member_id');
-        $committee_member->first_name = Input::get('first_name');
-        $committee_member->middle_name = Input::get('middle_name');
-        $committee_member->last_name = Input::get('last_name');
-        $committee_member->email = Input::get('email');
-        $committee_member->committee_position = Input::get('committee_position');
-        $committee_member->bio = Input::get('bio');
-        $committee_member->bhca_board_member = Input::get('bhca_board_member');
-        $committee_member->bhca_pool_committee_member = Input::get('bhca_pool_committee_member');
-        $committee_member->finance_committee_member = Input::get('finance_committee_member');
-        $committee_member->programs_committee_member = Input::get('programs_committee_member');
-        $committee_member->property_committee_member = Input::get('property_committee_member');
-        $committee_member->membership_committee_member = Input::get('membership_committee_member');
-        $committee_member->save();*/ 
-
+		catch(Exception $e) {
+            return Redirect::to('/committee_member')->with('flash_message','<b class="crud_flash_message">Update of committee member failed.</b>');
+		}
 	}
 
 
@@ -197,12 +183,20 @@ class CommitteeMemberController extends \BaseController {
 	 */
 	public function destroy($id)
 	{
-		CommitteeMember::destroy($id);
-    
-  	    return Redirect::to('/board')->with('flash-message', '<b class="crud_flash_message">Committee member deleted.</b>');
-        /*return Redirect::action('CommitteeMemberController@index')
-                        ->with('flash-message','<b class="crud_flash_message">Committee Member has been successfully deleted.</b>');*/
-	}
+       	try {
+			$committee_member = CommitteeMember::findOrFail($id);
+		}
+		catch(Exception $e) {
+			return Redirect::to('/committee_member')->with('flash_message', '<b class="crud_flash_message">Committee member not found</b>');
+		}
 
+		# Note there could be a `deleting` Model event to make sure related entries in other tables 
+        # are also destroyed, if that's ever needed.  That would go in CommitteeMember.php model.  
+		CommitteeMember::destroy($id);
+
+		return Redirect::action('CommitteeMemberController@index')
+                         ->with('flash_message','<b class="crud_flash_message">Your committee member has been deleted.</b>');
+        
+	}
 
 }

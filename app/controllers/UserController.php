@@ -96,12 +96,12 @@ class UserController extends BaseController {
 
 		# Note we don't have to hash the password before attempting to auth - Auth::attempt will take care of that for us
 		if (Auth::attempt($credentials, $remember = false)) {
-            /*Session::flash('flash-message', '<b class="crud_flash_message">Welcome Back!</b>'); */
+            /*Session::flash('flash_message', '<b class="crud_flash_message">Welcome Back!</b>'); */
             return Redirect::intended('/');
 			/*return Redirect::intended('/')->with('flash_message', '<b class="crud_flash_message">Welcome Back!</b>');*/
 		}
 		else {
-            /*Session::flash('flash-message', '<b class="crud_flash_message">Log in failed; please try again.</b>'); */
+            /*Session::flash('flash_message', '<b class="crud_flash_message">Log in failed; please try again.</b>'); */
 			return Redirect::to('/login')
 				->with('flash_message', '<b class="crud_flash_message">Log in failed; please try again.</b>')
 				->withInput();

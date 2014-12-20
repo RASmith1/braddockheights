@@ -20,7 +20,7 @@
         <div class="webmaster_cruds">
         <nav>
             <ul>
-                <li class="webmaster_crud  to_vertical_align"><a href='/bhca_member/create'>Create as BHCA Member first</a></li>
+                <li class="webmaster_crud  to_vertical_align"><a href='#'>Create as BHCA Member first</a></li>
             </ul>
         </nav>
         <h2 class='webmaster_small_white_text float_right  to_vertical_align'>Webmaster: </h2>
@@ -33,27 +33,35 @@
             
             {{ Form::label('bhca_member_id', 'BHCA Member') }}
 		    {{ Form::select('bhca_member_id', $bhca_members) }}
-            <br>
+            <br> 
             
-            <!--{{ Form::label('picture','picture: ') }}
-			{{ Form::text('picture') }}
--->
+            
+            {{ Form::label('picture','Picture: ') }}
+			{{ Form::file('picture') }}  
+            <br> 
+            
             
 			{{ Form::label('first_name','First Name: ') }}
 			{{ Form::text('first_name') }}
-                        
+             
+            
+                  
             {{ Form::label('middle_name','Middle Name: ') }}
 			{{ Form::text('middle_name') }}
+             
             
+             
             {{ Form::label('last_name','Last Name: ') }}
 			{{ Form::text('last_name') }}
-            <br>
+            <br> 
             
+             
+            {{ Form::label('email','Email: ') }}
+			{{ Form::email('email') }}
+             
             
-            {{ Form::label('email','email: ') }}
-			{{ Form::text('email') }}
-            
-            {{ Form::label('committee_position','committee position: ') }}
+             
+            {{ Form::label('committee_position','Committee position: ') }}
 			{{ Form::select('committee_position', array(
               'Please select' => 'Please select',
                   'President' => 'President', 
@@ -62,58 +70,65 @@
                   'Treasurer' => 'Treasurer',
                'Board Member' => 'Board Member'
                        ), 'Please select') }}
-            <br>
+             <br>
             
-            
-            {{ Form::label('bio','bio: ') }}
-			{{ Form::text('bio') }}
-            <br>
-            
-            
+             
             {{ Form::label('bhca_board_member','BHCA board member? ') }}
             {{ Form::select('bhca_board_member', array( 
-                            'True'  => 'True', 
-                            'False' => 'False'
-                         ), 'True') }}
+                            '0' => 'False',
+                            '1' => 'True' 
+                         ), '1') }}
+                 
             
+             
             {{ Form::label('bhca_pool_committee_member','BHCA Pool Committee member? ') }}
             {{ Form::select('bhca_pool_committee_member', array( 
-                            'True'  => 'True', 
-                            'False' => 'False'
-                         ), 'False') }}
-            <br>
+                            '0' => 'False',
+                            '1' => 'True' 
+                         ), '0') }}
+             <br> 
                 
-            
+             
             {{ Form::label('finance_committee_member','Finance Committee member? ') }}
             {{ Form::select('finance_committee_member', array( 
-                            'True'  => 'True', 
-                            'False' => 'False'
-                         ), 'False') }}
+                            '0' => 'False',
+                            '1' => 'True' 
+                         ), '0') }}
+             
             
+             
             {{ Form::label('programs_committee_member','Programs Committee member? ') }}
             {{ Form::select('programs_committee_member', array( 
-                            'True'  => 'True', 
-                            'False' => 'False'
-                         ), 'False') }}
-            <br>
+                            '0' => 'False',
+                            '1' => 'True' 
+                         ), '0') }}
+             <br>
             
-            
+             
             {{ Form::label('property_committee_member','Property Committee member? ') }}
             {{ Form::select('property_committee_member', array( 
-                            'True'  => 'True', 
-                            'False' => 'False'
-                         ), 'False') }}
+                            '0' => 'False',
+                            '1' => 'True' 
+                         ), '0') }}
+             
             
+             
             {{ Form::label('membership_committee_member','Membership Committee member? ') }}
             {{ Form::select('membership_committee_member', array( 
-                            'True'  => 'True', 
-                            'False' => 'False'
-                         ), 'False') }}
+                            '0' => 'False',
+                            '1' => 'True' 
+                         ), '0') }}
+            <br>
+            {{ Form::label('bio','Bio: ') }}
+            <br>
+			{{ Form::textarea('bio', 'Enter biography here...') }}
+             
             <br><br>
             
 		</div>
 
 		{{ Form::submit('Add Committee Member') }}
+        <br><br>
 	{{ Form::close() }}
 
 @stop

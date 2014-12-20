@@ -46,4 +46,6 @@ I did create a /truncate route, which you can use to clean out my tables if you 
 I'm having some trouble on the server side, but hopefully by the time you get this, I'll have it resolved.
 
 # **Outside Code**
-Outside code is documented within the software with links to their sourse.
+Outside code snippets from online are documented within the software with links to their sourse.
+Vintage social media icons on the home page were obtained from:
+    http://webtoolkit4.me/2012/06/03/36-free-vintage-social-icons/  

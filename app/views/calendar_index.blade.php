@@ -11,7 +11,10 @@
 
     <div id="calendar_wrapper">
 
-        <?php $thisPage="Calendar of Events" ; include( "/../app/views/header_and_nav.blade.php"); ?>
+        <?php $thisPage="Calendar of Events" ; ?>
+        <header class="row">
+		      @include('includes.header_and_nav')
+	    </header>
 
         <div id="calendar_frame_wrapper">
 
@@ -22,5 +25,7 @@
 @stop
 
 @section('footer')        
-    <?php include( '/../app/views/footer.blade.php'); ?>
+    <footer class="row">
+		@include('includes.footer')
+	</footer>
 @stop 

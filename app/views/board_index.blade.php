@@ -11,8 +11,11 @@
 
     <div id="board_wrapper">
         
-       <!-- <?php $thisPage="BHCA_Board" ; include( "header_and_nav.blade.php"); ?>-->
-        <?php $thisPage="BHCA_Board" ; include( "/../app/views/header_and_nav.blade.php"); ?>
+       
+        <?php $thisPage="BHCA_Board" ; ?>
+        <header class="row">
+		      @include('includes.header_and_nav')
+	    </header>
 
         <div id="board_frame_wrapper">
 
@@ -23,5 +26,7 @@
 @stop
 
 @section('footer')        
-    <?php include( '/../app/views/footer.blade.php'); ?>
+    <footer class="row">
+		@include('includes.footer')
+	</footer>
 @stop 

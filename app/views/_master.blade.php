@@ -4,8 +4,9 @@
 
     <title>@yield('title','Braddock Heights, Maryland')</title>
    
-    <!-- Just to practice including items this way... -->
-    <?php include( "/../app/views/htmlhead.blade.php"); ?>
+    <head class="row">
+		@include('includes.htmlhead')
+	</head>
    
 
 	

@@ -57,15 +57,15 @@ class BraddockheightsSeeder extends Seeder {
         $committee_member->middle_name  = 'Ann';
         $committee_member->last_name    = 'Adams';
         $committee_member->email        = 'AAA@gmail.com';
-        $committee_member->committee_position = '';
+        $committee_member->committee_position = 'Board Member';
         $committee_member->bio          = 'I have lived in Braddock Heights since the early 2001s. I love to
                                      meet new neighbors. I\'ve been a BHCA Board member for 1 year.';
-        $committee_member->bhca_board_member = 'true';
-        $committee_member->bhca_pool_committee_member = 'true';
-        $committee_member->finance_committee_member = 'true';
-        $committee_member->programs_committee_member = 'false';
-        $committee_member->property_committee_member = 'false';
-        $committee_member->membership_committee_member = 'false';
+        $committee_member->bhca_board_member = '1';
+        $committee_member->bhca_pool_committee_member = '0';
+        $committee_member->finance_committee_member = '0';
+        $committee_member->programs_committee_member = '0';
+        $committee_member->property_committee_member = '0';
+        $committee_member->membership_committee_member = '0';
         $committee_member->bhcaMember()->associate($bhca_member); # <--- Associate the BHCA Member with this Committee Member
         $committee_member->save();
         
@@ -89,15 +89,15 @@ class BraddockheightsSeeder extends Seeder {
         $committee_member->middle_name  = 'Bea';
         $committee_member->last_name    = 'Boxer';
         $committee_member->email        = 'bbb@gmail.com';
-        $committee_member->committee_position = '';
+        $committee_member->committee_position = 'Treasurer';
         $committee_member->bio          = 'I have lived in Braddock Heights since early 2002. I love to
                                      meet new neighbors. I\'ve been a BHCA Board member for 2 years.';
-        $committee_member->bhca_board_member = 'true';
-        $committee_member->bhca_pool_committee_member = 'false';
-        $committee_member->finance_committee_member = 'false';
-        $committee_member->programs_committee_member = 'true';
-        $committee_member->property_committee_member = 'true';
-        $committee_member->membership_committee_member = 'false';
+        $committee_member->bhca_board_member = '1';
+        $committee_member->bhca_pool_committee_member = '0';
+        $committee_member->finance_committee_member = '0';
+        $committee_member->programs_committee_member = '1';
+        $committee_member->property_committee_member = '1';
+        $committee_member->membership_committee_member = '0';
         $committee_member->bhcaMember()->associate($bhca_member); # <--- Associate the BHCA Member with this Committee Member
         $committee_member->save();
         
@@ -121,15 +121,15 @@ class BraddockheightsSeeder extends Seeder {
         $committee_member->middle_name  = 'Coolidge';
         $committee_member->last_name    = 'Crum';
         $committee_member->email        = 'ccc@gmail.com';
-        $committee_member->committee_position = '';
+        $committee_member->committee_position = 'Vice President';
         $committee_member->bio          = 'I have lived in Braddock Heights since late 2003. I love to
                                      meet new neighbors. I\'ve been a BHCA Board member for 3 years.';
-        $committee_member->bhca_board_member = 'true';
-        $committee_member->bhca_pool_committee_member = 'false';
-        $committee_member->finance_committee_member = 'false';
-        $committee_member->programs_committee_member = 'false';
-        $committee_member->property_committee_member = 'false';
-        $committee_member->membership_committee_member = 'true';
+        $committee_member->bhca_board_member = '1';
+        $committee_member->bhca_pool_committee_member = '0';
+        $committee_member->finance_committee_member = '0';
+        $committee_member->programs_committee_member = '0';
+        $committee_member->property_committee_member = '0';
+        $committee_member->membership_committee_member = '1';
         $committee_member->bhcaMember()->associate($bhca_member); # <--- Associate the BHCA Member with this Committee Member
         $committee_member->save();
         

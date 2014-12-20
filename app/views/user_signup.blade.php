@@ -8,7 +8,10 @@
 
 <div id="board_wrapper">
         
-        <?php $thisPage="Signup" ; include( "/../app/views/header_and_nav.blade.php"); ?>
+        <?php $thisPage="Signup" ; ?>
+        <header class="row">
+		      @include('includes.header_and_nav')
+	    </header>
 
         <div id="board_frame_wrapper">
 
@@ -38,8 +41,6 @@
             {{ Form::close() }} 
 
         </div>
-</div>
-
-
+    </div>
 
 @stop

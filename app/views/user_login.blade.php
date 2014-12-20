@@ -6,13 +6,16 @@
 
 @section('content')
 
-<div id="board_wrapper">
+    <div id="board_wrapper">
         
-        <?php $thisPage="Login" ; include( "/../app/views/header_and_nav.blade.php"); ?>
+        <?php $thisPage="Login" ; ?>
+        <header class="row">
+		      @include('includes.header_and_nav')
+	    </header>
 
-        <div id="board_frame_wrapper">
+        <div class="med_login_text" id="board_frame_wrapper">
             
-            <h1>Log in</h1>
+            <h1 class="big_white_text">Log in</h1>
             
             {{ Form::open(array('url' => '/login')) }}
 
@@ -28,8 +31,5 @@
 
         </div>
     </div>
-
-
-
 
 @stop

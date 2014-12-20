@@ -9,43 +9,24 @@
 
 @section('content')
 
-    
-
     <div id="board_wrapper">
         <h1 class="white_text">Braddock Heights Community Association Board Members</h1>
         <br>
         <div class="webmaster_cruds">
             <nav>
-                <!--<ul>
-                    <li <?php print((Auth::check()) ? 'class="webmaster_crud_enabled"' : 'class="webmaster_crud_disabled"'); ?>>
-                        <a href='/committee_member/delete'>Delete</a></li>
+                <ul>
+                    <li class="webmaster_crud  to_vertical_align"><a href='/committee_member'> Read </a></li>
                 </ul>
                 <ul>
-                    <li <?php print((Auth::check()) ? 'class="webmaster_crud_enabled"' : 'class="webmaster_crud_disabled"'); ?>>
-                        <a href='/committee_member/update'>Update</a></li>
-                </ul>-->
-                <ul>
-                    <li class="webmaster_crud  to_vertical_align"><a href='/committee_member/index'> Read </a></li>
-                </ul>
-                <ul>
-                    <!--<li class="webmaster_crud to_vertical_align"><a href='/committee_member/create'>Create</a></li>-->
                     <li <?php print((Auth::check()) ? 'class="webmaster_crud_enabled"' : 'class="webmaster_crud_disabled"'); ?>>
                         <a href='/committee_member/create'>Create</a></li>
                 </ul>
             </nav>
             <h2 class='webmaster_small_white_text float_right  to_vertical_align'>Webmaster: </h2>
-            
         </div>
         
-        <!--<nav>
-            <ul>
-                @if(Auth::check())
-                    <li><a href='/logout'>Webmaster Log out {{ Auth::user()->email; }}</a></li>
-                @else
-                    <li><a href='/signup'>Webmaster Sign up</a><span class="small_white_text"> or </span><a href='/login'>Webmaster Log in</a></li>
-                @endif
-            </ul>
-	   </nav>-->
+        <!-- Set this inside the loop so we know to delete the current committee member id, if requested, outside of this loop-->
+        <?php $should_delete = 0; ?>
         
         <div class="clear_right">
             <table class="members_table">   
@@ -60,26 +41,30 @@
                                     <div class="webmaster_cruds">
                                         <nav>
                                             <ul>
+                                                <!--<li <?php print((Auth::check()) ? 'class="webmaster_crud_enabled"' : 'class="webmaster_crud_disabled"'); ?>>
+                                                        <a href='#delete-{{ $committee_member->id }}'>Delete</a>
+                                                </li>-->
                                                 <li <?php print((Auth::check()) ? 'class="webmaster_crud_enabled"' : 'class="webmaster_crud_disabled"'); ?>>
-                                                    <a href='/committee_member/destroy($committee_member->id)'>Delete</a></li>
+                                                    <!--This macro is found in the global.php file, and it was an answer to prayer -->
+                                                    <!--I put it inside the href in order to try to style it similar to others-->
+                                                    <a href=''>{{Form::delete('committee_member/'. $committee_member->id, 'Delete')}}
+                                                    </a>
+                                                   <!-- {{Form::delete('committee_member/'. $committee_member->id, 'Delete')}}-->
+                                                </li>
                                             </ul>
                                             <ul>
                                                 <li <?php print((Auth::check()) ? 'class="webmaster_crud_enabled"' : 'class="webmaster_crud_disabled"'); ?>>
-                                                    <a href='/committee_member/edit($committee_member->id)'>Update</a></li>
+                                                    <a href='/committee_member/{{ $committee_member->id }}/edit'>Update</a></li>
                                             </ul>
                                         </nav>
-                                   <!-- <h2 class='webmaster_small_brown_text float_right  to_vertical_align'>Webmaster: </h2>-->
-                                        
                                     </div>
-                                <p class="float_right">{{ $committee_member->committee_position }}</p>
+                                <p class="clear_right">{{ $committee_member->committee_position }}</p>
                                 <p>{{ $committee_member->bio }}</p>
                             </div>
                         </div> 
                     </tr>
                 @endforeach
-                
             </table> 
-            
         </div>
     </div>
 
