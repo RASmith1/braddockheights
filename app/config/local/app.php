@@ -13,7 +13,7 @@ return array(
 	|
 	*/
 
-	'debug' => true,
+	'debug' => false,
 	/* NOTE: I added url entry below */
 	'url'   => 'http://localhost',
 
