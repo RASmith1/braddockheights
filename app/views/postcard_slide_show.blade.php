@@ -13,9 +13,18 @@
 		Author	: Sam Dunn
 		Company : One Mighty Roar (www.onemightyroar.com)
 		License : MIT License / GPL License
-	-->  
-    <link rel="stylesheet" href="/css/supersized.css" type="text/css" media="screen" />
-    <link rel="stylesheet" href="/css/supersized.shutter.css" type="text/css" media="screen" />
+	-->
+
+    
+
+     <!-- Use jQuery CDN as indicated here: http://jquery.com/download/ -->
+     <script src="//code.jquery.com/jquery-1.11.2.min.js"></script>
+     <script src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+
+    <script type="text/javascript" src="/js/jquery.easing.min.js"></script>
+
+    <script type="text/javascript" src="/js/supersized.3.2.7.min.js"></script>
+    <script type="text/javascript" src="/js/supersized.shutter.min.js"></script>
 
     <script type="text/javascript">
         jQuery(function($) {
@@ -96,8 +105,8 @@
 @section('content')
 
     <div class="container">
+         
         <!--Demo styles (you can delete this block)-->
-
         <ul id="demo-block">
             <li>
                 <a href="http://buildinternet.com/project/supersized/" target="_blank">
